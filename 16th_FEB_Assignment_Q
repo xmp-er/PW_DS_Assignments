@@ -1,1 +1,132 @@
+ANS-1-
+A database store the data,the data may be structured and if so then it is stored in SQL databases and if it us unstructured data then the data is stored in NoSQL databases.
+
+
+ANS-2-
+DDL stands for Data Definition Language, which is a subset of SQL commands used to define and manipulate the structure of a database
+CREATE is a DDL command used to create a new database object
+Ex:-
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+
+DROP is a DDL command used to delete a database object
+Ex:-
+DROP TABLE employees;
+
+ALTER is a DDL command used to modify the structure of an existing database object
+Ex:-
+ALTER TABLE employees ADD COLUMN address VARCHAR(100);
+
+TRUNCATE is a DDL command used to delete all data from a table
+Ex:-
+TRUNCATE TABLE employees;
+
+ANS-3-
+
+DML stands for Data Manipulation Language, which is a subset of SQL commands used to manipulate the data within a database. The three primary DML commands are INSERT, UPDATE, and DELETE.
+
+INSERT is a DML command used to add new data to a table. For example, you can add a new row to a table using the INSERT INTO statement
+
+UPDATE is a DML command used to modify existing data in a table. For example, you can update the salary of an employee using the UPDATE statement
+
+DELETE is a DML command used to remove data from a table. For example, you can delete a specific row from a table using the DELETE FROM statement
+
+EX:-
+
+INSERT INTO employees (id, name, department, salary)
+VALUES (1, 'John Doe', 'Sales', 50000);
+
+UPDATE employees
+SET salary = 55000
+WHERE id = 1;
+
+DELETE FROM employees
+WHERE id = 1;
+
+
+ANS-4-
+DQL stands for Data Query Language, which is a subset of SQL commands used to retrieve data from a database. The most common DQL command is SELECT.
+Ex:-
+
+SELECT * FROM employees;
+
+ANS-5-
+A Primary Key is a unique identifier for a row in a table. It is used to enforce data integrity by ensuring that each row in the table has a unique identifier. A primary key can consist of one or more columns in the table and is typically used as a reference by other tables in a database. For example, in an "employees" table, the "id" column can be used as the primary key to uniquely identify each employee.
+
+A Foreign Key is a column or set of columns in one table that refers to the Primary Key in another table. It is used to create relationships between tables and ensure data
+
+ANS-6-
+
+import mysql.connector
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="abc",
+  password="password"
+)
+print(mydb)
+mycursor = mydb.cursor()
+mycursor.execute("CREATE TABLE test.test1(a INT)")
+mycursor.execute("insert into test.test1(1)")
+mydb.commit()
+mycursor.execute("SHOW DATABASES")
+for x in mycursor:
+  print(x)
+  
+  
+ANS-7-
+
+The order of execution of SQL clauses in an SQL query is as follows:
+
+FROM clause - specifies the table or tables that the data will be selected from.
+WHERE clause - filters the data based on specified conditions.
+GROUP BY clause - groups the data by one or more columns.
+HAVING clause - filters the grouped data based on specified conditions.
+SELECT clause - selects the columns to be returned in the result set.
+ORDER BY clause - sorts the result set based on specified columns or expressions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
