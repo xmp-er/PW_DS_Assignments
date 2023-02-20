@@ -1,1 +1,17 @@
 ANS-2-
+
+Flask app code:-
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world(): #simple flask application to output hello world
+    return "<h1>Hello, World!</h1>"
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0")
+
+Results:-
+![image](https://user-images.githubusercontent.com/107166230/220080328-516909dc-554e-45c7-8dbc-a17dabca151e.png)
